@@ -4,22 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <title>Movie App</title>
 </head>
 
 <body>
-    <div id="container">
-        <nav>
-            <div>
-                <h1>Search Movie</h1>
-                <input type="text" id="search-movie" placeholder="Search for movies...">
-            </div>
-        </nav>
-        <main>
-            <div id="movie-container" class="movie-container"></div>
-            <div id="pagination-container"></div>
-        </main>
+
+    <header>
+        <form id="form">
+            <input type="text" placeholder="Search" id="search" class="search">
+        </form>
+    </header>
+    <div id="tags"></div>
+
+    <main id="main"></main>
+    <div class="pagination">
+        <div class="page" id="prev">Previous Page</div>
+        <div class="current" id="current">1</div>
+        <div class="page" id="next">Next Page</div>
+
     </div>
 
     <script src="script.js"></script>

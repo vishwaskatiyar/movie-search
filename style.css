@@ -1,132 +1,175 @@
-/* style.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
 
-/* Reset default margin and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styles */
+:root {
+  --primary-color: #277785b5;
+  --secondary-color: #101010;
+}
+
 body {
-  font-family: "Roboto", sans-serif; /* Modern font */
-  background-color: #151515; /* Dark background */
-  color: #fff; /* White text */
+  background-color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
 }
 
-/* Navigation styles */
-nav {
-  background-color: #333;
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-color);
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1rem;
   color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
-  border-bottom: 2px solid #00ffff; /* Neon blue border bottom */
+  font-family: inherit;
 }
 
-nav:hover {
-  background-color: #444; /* Darker background on hover */
+.search:focus {
+  outline: 0;
+  background-color: var(--primary-color);
 }
 
-nav h1 {
-  font-size: 32px; /* Larger font size */
-  font-weight: 700; /* Bold font weight */
-  color: #00ffff; /* Neon blue text */
-  text-transform: uppercase; /* Uppercase text */
+.search::placeholder {
+  color: #7378c5;
 }
 
-/* Container styles */
-.movie-container {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* Responsive grid */
-  gap: 20px;
-  padding: 20px;
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Card styles */
-.movie-card {
-  margin: 10px;
-  border: none; /* No border */
-  border-radius: 20px; /* Rounded corners */
+.movie {
+  width: 300px;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-color);
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Soft shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  background-color: #1e1e1e; /* Dark gray background */
 }
 
-.movie-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.5); /* Neon blue shadow on hover */
-}
-
-.movie-card img {
+.movie img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px 20px 0 0; /* Rounded top corners for image */
 }
 
-.movie-card-content {
-  padding: 20px;
+.movie-info {
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
 }
 
-.movie-card h3 {
-  font-size: 20px; /* Medium font size */
-  margin-bottom: 10px;
-  color: #00ffff; /* Neon blue text */
+.movie-info h3 {
+  margin-top: 0;
 }
 
-.movie-card p {
-  font-size: 16px; /* Smaller font size */
-  color: #ddd; /* Light gray text */
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
-/* Pagination styles */
-#pagination-container {
-  width: 100%;
-  margin-top: 20px;
-  text-align: center;
+.movie-info span.green {
+  color: rgb(238, 144, 144);
 }
 
-/* Input styles */
-input[type="text"] {
-  width: calc(100% - 40px); /* Take up remaining space minus padding */
-  padding: 12px; /* Increase padding */
-  font-size: 16px;
-  border: none;
-  border-radius: 30px; /* Increased border radius */
-  background-color: #444; /* Darker background */
-  color: #fff; /* White text */
-  margin: 10px;
+.movie-info span.orange {
+  color: orange;
 }
 
-/* Button styles */
-button {
-  padding: 12px 24px; /* Increased padding */
-  font-size: 16px;
-  color: #fff;
-  background-color: #00ffff; /* Neon blue background */
-  border: none;
-  border-radius: 30px; /* Increased border radius */
+.movie-info span.red {
+  color: red;
+}
+
+.overview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  padding: 1rem;
+  max-height: 100%;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+#tags {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.tag {
+  color: white;
+  padding: 10px 20px;
+  background-color: rgb(7, 9, 9);
+  border-radius: 50px;
+  margin: 5px;
+  display: inline-block;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition on hover */
-  margin: 10px;
 }
 
-button:hover {
-  background-color: #00b3b3; /* Darker blue on hover */
+.tag.highlight {
+  background-color: red;
 }
-/* Add this CSS to your existing style.css file */
-.no-movies {
-  color: #ff0000; /* Red color */
-  font-size: 24px; /* Larger font size */
-  text-align: center; /* Center text */
-  margin-top: 10rem;
+.no-results {
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  margin: 10px 30px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.page {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.page.disabled {
+  cursor: not-allowed;
+  color: grey;
+}
+
+.current {
+  padding: 10px 20px;
+  border-radius: 50%;
+  border: 5px solid rgb(7, 7, 6);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.know-more {
+  background-color: orange;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-top: 5px;
 }
