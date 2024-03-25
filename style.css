@@ -9,22 +9,23 @@
 
 /* Body styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8; /* Light gray background */
+  font-family: "Roboto", sans-serif; /* Modern font */
+  background-color: #151515; /* Dark background */
+  color: #fff; /* White text */
 }
 
 /* Navigation styles */
 nav {
   background-color: #333;
   color: #fff;
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   transition: background-color 0.3s ease; /* Smooth transition on hover */
-  border-bottom: 2px solid #222; /* Darker border bottom */
+  border-bottom: 2px solid #00ffff; /* Neon blue border bottom */
 }
 
 nav:hover {
@@ -32,8 +33,9 @@ nav:hover {
 }
 
 nav h1 {
-  font-size: 24px;
-  color: #fff; /* White text color */
+  font-size: 32px; /* Larger font size */
+  font-weight: 700; /* Bold font weight */
+  color: #00ffff; /* Neon blue text */
   text-transform: uppercase; /* Uppercase text */
 }
 
@@ -45,43 +47,45 @@ nav h1 {
     minmax(250px, 1fr)
   ); /* Responsive grid */
   gap: 20px;
+  padding: 20px;
 }
 
 /* Card styles */
 .movie-card {
   margin: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: none; /* No border */
+  border-radius: 20px; /* Rounded corners */
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  background-color: #fff; /* White background for cards */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  background-color: #1e1e1e; /* Dark gray background */
 }
 
 .movie-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.5); /* Neon blue shadow on hover */
 }
 
 .movie-card img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 20px 20px 0 0; /* Rounded top corners for image */
 }
 
 .movie-card-content {
-  padding: 15px;
+  padding: 20px;
 }
 
 .movie-card h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-  color: #333; /* Dark text color */
+  font-size: 20px; /* Medium font size */
+  margin-bottom: 10px;
+  color: #00ffff; /* Neon blue text */
 }
 
 .movie-card p {
-  font-size: 16px;
-  color: #666; /* Gray text color */
+  font-size: 16px; /* Smaller font size */
+  color: #ddd; /* Light gray text */
 }
 
 /* Pagination styles */
@@ -89,4 +93,40 @@ nav h1 {
   width: 100%;
   margin-top: 20px;
   text-align: center;
+}
+
+/* Input styles */
+input[type="text"] {
+  width: calc(100% - 40px); /* Take up remaining space minus padding */
+  padding: 12px; /* Increase padding */
+  font-size: 16px;
+  border: none;
+  border-radius: 30px; /* Increased border radius */
+  background-color: #444; /* Darker background */
+  color: #fff; /* White text */
+  margin: 10px;
+}
+
+/* Button styles */
+button {
+  padding: 12px 24px; /* Increased padding */
+  font-size: 16px;
+  color: #fff;
+  background-color: #00ffff; /* Neon blue background */
+  border: none;
+  border-radius: 30px; /* Increased border radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #00b3b3; /* Darker blue on hover */
+}
+/* Add this CSS to your existing style.css file */
+.no-movies {
+  color: #ff0000; /* Red color */
+  font-size: 24px; /* Larger font size */
+  text-align: center; /* Center text */
+  margin-top: 10rem;
 }

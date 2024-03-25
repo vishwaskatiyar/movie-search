@@ -28,7 +28,7 @@ const debounceFunction = debounce(fetchMovie, 1000);
 searchInput.addEventListener('input', debounceFunction);
 
 function responseIsFalse() {
-    movieContainer.innerHTML = `<h2>No movies were found for your search input "${searchInput.value}"</h2>`;
+    movieContainer.innerHTML = `<h2 class="no-movies">No movies were found for your search input "${searchInput.value}"</h2>`;
     paginationContainer.innerHTML = ""; // Clear pagination if no results found
 }
 
